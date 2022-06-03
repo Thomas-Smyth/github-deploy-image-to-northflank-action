@@ -1,0 +1,29 @@
+name: '@northflank/deploy-docker-image-action'
+description: Deploy a Docker image to a Northflank service or job.
+inputs:
+  northflank-api-host:
+    description: Host of the Northflank API
+    required: false
+    default: https://api.northflank.com
+  northflank-api-key:
+    description: API Key for the Northflank API
+    required: true
+  project-id:
+    description: ID of the project the service or job belongs to
+    required: true
+  service-id:
+    description: ID of the service to deploy to
+    required: false
+  job-id:
+    description: ID of the service to deploy to
+    required: false
+  image-path:
+    description: Path of the image to deploy
+    required: true
+  credentials-id:
+    description: ID of the credentials to use to access the image
+    required: false
+
+runs:
+  using: node12
+  main: index.js
